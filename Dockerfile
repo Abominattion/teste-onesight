@@ -15,5 +15,7 @@ RUN curl -sL https://getcomposer.org/installer | php -- --install-dir /usr/bin -
 
 RUN pecl install xdebug
 
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Comando padrão para iniciar o PHP-FPM
 CMD ["php-fpm"]
