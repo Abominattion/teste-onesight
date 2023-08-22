@@ -22,5 +22,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: teste_onesight
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: adonay
+      MYSQL_PASSWORD: adonay1997!
+    ports:
+      - "3306:3306"
