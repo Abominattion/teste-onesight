@@ -25,7 +25,11 @@
                     {% if app.user %}
                         <li class="has-colapse"><a href="#" title="Outros">{{ app.user.name }}<i class='bx bx-chevron-down'></i></a>
                         <ul class="dropdown">
-                            <li><a href="/dashboard" title="Link 1">Perfil</a></li>
+                            <li>
+                                {% if app.user.getLevel == 1 %}
+                                    <a href="/dashboard" title="Link 1">Dashboard</a>
+                                {% endif %}
+                            </li>
                             <li><a href="{{ path('app_logout') }}" title="Sair">Sair</a></li>
                         </ul>
                     </li>

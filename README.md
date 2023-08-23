@@ -21,6 +21,8 @@ Este projeto visa demonstrar uma aplicação Symfony utilizando Docker para ambi
 3. **Configurar o banco de dados**:
     Crie o banco de dados, execute as migrações e popule o banco com dados de exemplo. Use o seguinte comando:
     ```shell
-    php bin/console doctrine:database:create && bin/console doctrine:migrations:migrate && php bin/console doctrine:fixtures:load  
+    php bin/console doctrine:database:create 
+    bin/console doctrine:migrations:migrate 
+    php bin/console doctrine:fixtures:load  
     ```
     Isso criará o banco de dados, aplicará as migrações e preencherá o banco com dados iniciais.
