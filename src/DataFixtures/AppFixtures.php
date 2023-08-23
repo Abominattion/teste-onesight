@@ -2,9 +2,8 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Stacks;
+use App\Entity\Stack;
 use App\Entity\User;
-use App\Entity\Users;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -25,7 +24,7 @@ class AppFixtures extends Fixture
         $stackNames = ['Front-end', 'Back-end', 'Full-stack'];
 
         foreach ($stackNames as $stackName) {
-            $stack = new Stacks();
+            $stack = new Stack();
             $stack->setName($stackName);
 
             $manager->persist($stack);
@@ -36,7 +35,7 @@ class AppFixtures extends Fixture
 
     private function createAdmin($faker, ObjectManager $manager): void
     {
-        $user = new Users();
+        $user = new User();
         $user->setName('Admin App');
         $user->setEmail('admin@admin.com');
         $user->setPassword(password_hash('password', PASSWORD_DEFAULT));
@@ -49,8 +48,8 @@ class AppFixtures extends Fixture
 
     private function createUsers($faker, ObjectManager $manager): void
     {
-        for ($i = 0; $i < 1000; $i++) {
-            $user = new Users();
+        for ($i = 0; $i < 100; $i++) {
+            $user = new User();
             $user->setName($faker->name);
             $user->setEmail($faker->email);
             $user->setPassword(password_hash('password', PASSWORD_DEFAULT));

@@ -19,13 +19,13 @@ final class Version20230822104954 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        $this->addSql('ALTER TABLE users ADD stack_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE users ADD CONSTRAINT FK_USER_STACK FOREIGN KEY (stack_id) REFERENCES stacks (id)');
+        $this->addSql('ALTER TABLE user ADD stack_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE user ADD CONSTRAINT FK_USER_STACK FOREIGN KEY (stack_id) REFERENCES stack (id)');
     }
 
     public function down(Schema $schema): void
     {
-        $this->addSql('ALTER TABLE users DROP FOREIGN KEY FK_USER_STACK');
-        $this->addSql('ALTER TABLE users DROP stack_id');
+        $this->addSql('ALTER TABLE user DROP FOREIGN KEY FK_USER_STACK');
+        $this->addSql('ALTER TABLE user DROP stack_id');
     }
 }

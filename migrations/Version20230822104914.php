@@ -19,7 +19,7 @@ final class Version20230822104914 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        $this->addSql('CREATE TABLE stacks (
+        $this->addSql('CREATE TABLE stack (
             id INT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(255) NOT NULL
         ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
@@ -27,6 +27,6 @@ final class Version20230822104914 extends AbstractMigration
 
     public function down(Schema $schema): void
     {
-        $this->addSql('DROP TABLE stacks');
+        $this->addSql('DROP TABLE stack');
     }
 }
