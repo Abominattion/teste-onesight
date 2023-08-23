@@ -1,0 +1,41 @@
+<!-- ==== ARTICLES ==== -->
+<section class="articles">
+    <div class="container content">
+        <div class="section-header">
+            <h2 class="wow animate__animated animate__fadeInUp" data-wow-delay="350ms" data-wow-duration="2s">
+                Vagas
+            </h2>
+            <p class="wow animate__animated animate__fadeInRightBig" data-wow-delay="350ms" data-wow-duration="2s">
+                Explore Nossas Oportunidades: Encontre a Vaga de Programação Perfeita para Impulsionar Sua Carreira!
+            </p>
+        </div>
+
+        <div class="articles-content wow animate__animated animate__fadeInUp" data-wow-delay="250ms" data-wow-duration="2s">
+            {% for vaga in vagas %}
+                <article>
+                    <div class="article-cover">
+                        <img src="{{ vaga.capa }}" alt="Article Cover">
+                    </div>
+                    <div class="article-category">
+                        <a href="#" class="gradient gradient-hover transition  gradient-red">{{ vaga.tipo }}</a>
+                    </div>
+                    <div class="article-details">
+                        <a href="#">
+                            <h2>{{ vaga.titulo }}</h2>
+                            <small>Por: Admin • 14/03/2022</small>
+                            <p>{{ vaga.descricao }}</p>
+                        </a>
+                    </div>
+                    <div class="like">
+                        <button class="gradient gradient-hover transition gradient-red">
+                            <i class='bx bxs-heart'></i>
+                        </button>
+                        <button class="gradient gradient-hover transition gradient-blue">
+                            <i class='bx bxs-share'></i>
+                        </button>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

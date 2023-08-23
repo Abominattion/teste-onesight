@@ -1,0 +1,42 @@
+<!-- ==== HEADER ==== -->
+<header class="wow animate__animated animate__fadeIn" data-wow-delay="400ms">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="#" title="Site Nome">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="Site Logo">
+                    Site Nome
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="/" title="Home">Home</a></li>
+                    <li><a href="#" title="Sobre">Sobre</a></li>
+                    <li><a href="#" title="Serviços">Serviços</a></li>
+                    <li class="has-colapse"><a href="#" title="Outros">Outros<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#" title="Link 1">Link 1</a></li>
+                            <li><a href="#" title="Link 2">Link 2</a></li>
+                            <li><a href="#" title="Link 3">Link 3</a></li>
+                            <li><a href="#" title="Link 4">Link 4</a></li>
+                        </ul>
+                    </li>
+
+                    {% if app.user %}
+                        <li class="has-colapse"><a href="#" title="Outros">{{ app.user.name }}<i class='bx bx-chevron-down'></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#" title="Link 1">Perfil</a></li>
+                            <li><a href="{{ path('app_logout') }}" title="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                        <li><a href="/login" title="Login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <button class="btn btn-primary btn-mobile">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </div>
+</header>

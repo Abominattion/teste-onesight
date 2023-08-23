@@ -1,0 +1,69 @@
+<!-- ==== LOGIN FORM ====  -->
+<section class="auth-site container content">
+    <div class="auth-form-content">
+        <div class="auth-form-header">
+            <h2>Fazer login</h2>
+            <p>Não tem uma conta? <a href="#">Crie uma conta agora mesmo!</a></p>
+        </div>
+
+        <div class="social-auth">
+            <a class="btn btn-facebook" href="#"><i class='bx bxl-facebook'></i> Entrar com o Facebook</a>
+            <a class="btn btn-google" href="#"> <i class='bx bxl-google'></i>Entrar com o Google</a>
+        </div>
+
+        <form class="auth-form" action="#" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+            {% endif %}
+
+            <div class="auth-form-group">
+                <div class="auth-form-input">
+                    <input type="email" name="email" value="{{ last_username }}" placeholder="Seu email" required>
+                </div>
+                <div class="auth-form-icon">
+                    <i class='bx bx-envelope'></i>
+                </div>
+            </div>
+
+            <div class="forget">
+                <a href="#">Esqueci minha senha</a>
+            </div>
+
+            <div class="auth-form-group">
+                <div class="auth-form-input">
+                    <input type="password" name="password" id="inputPassword" placeholder="Sua senha" required>
+                </div>
+                <div class="auth-form-icon">
+                    <i class='bx bxs-key'></i>
+                </div>
+                <div class="auth-form-icon-password">
+                    <i class='bx bx-show-alt see-password-icon'></i>
+                </div>
+            </div>
+
+            <div class="data-save">
+                <div class="pretty p-svg p-curve">
+                    <input type="checkbox" />
+                    <div class="state p-success">
+                        <!-- svg path -->
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                            <path
+                                d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                                style="stroke: white;fill:white;"></path>
+                        </svg>
+                        <label>Salvar meus dados</label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="auth-btn btn btn-primary">Entrar</button>
+        </form>
+    </div>
+</section>

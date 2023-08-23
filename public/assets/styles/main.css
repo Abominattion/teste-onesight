@@ -1,0 +1,14 @@
+/* ==== RESETS ==== */
+@import url(./boot.css);
+
+/* ==== COMPONENTS ==== */
+@import url(./header.css);
+@import url(./articles.css);
+@import url(./about.css);
+@import url(./footer.css);
+@import url(./login.css);
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+

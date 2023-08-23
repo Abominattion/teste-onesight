@@ -1,0 +1,126 @@
+/* ==== AUTH SITE ==== */
+.auth-site{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-form-content{
+    background: var(--header);
+    box-shadow: var(--soft-shadow);
+    width: 500px;
+    border-radius: var(--radius-medium);
+    padding: 20px 40px;
+}
+
+.auth-form-header{
+    text-align: center;
+}
+
+.auth-form-header h2{
+    font-size: var(--font-max);
+    color: var(--text);
+}
+
+.auth-form-header p{
+    color: var(--text);
+    font-size: var(--font-small);
+}
+
+.auth-form-header a{
+    color: var(--title);
+}
+
+.social-auth{
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.social-auth a{ 
+   white-space: nowrap;
+   display: flex;
+   align-items: center;
+}
+
+.auth-form{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.forget{
+    text-align: end;
+}
+
+.forget a{
+    font-size: var(--font-small);
+    color: var(--title);
+}
+
+.auth-form-group{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.auth-form-input{
+    width: 100%;
+}
+
+.auth-form-input input {
+    width: 100%;
+    background: var(--header);
+    border: 1px solid var(--primary);
+    padding: 12px 44px;
+    margin: 10px 0;
+    border-radius: var(--radius-normal);
+    font-size: var(--font-medium);
+}
+
+.auth-form-input input::placeholder {
+    color: var(--text);
+}
+
+.auth-form-input input:focus{
+    outline: none;
+}
+
+.auth-form-icon{
+    position: absolute;
+    display: flex;
+    padding: 0 8px;
+    font-size: var(--font-large);
+    color: var(--title);
+    border-right: 1px solid var(--text);
+}
+
+.auth-form-icon-password{
+    position: absolute;
+    left: 380px;
+    display: flex;
+    font-size: var(--font-large);
+    color: var(--title);
+    justify-content: end;
+    cursor: pointer;
+}
+
+.auth-form-icon-password i{
+    padding: 0 8px;
+    border-left: 1px solid var(--text);
+}
+
+.data-save{
+    margin: 20px 0;
+}
+
+.data-save label{
+    color: var(--text);
+}
+
+.auth-btn{
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+}
