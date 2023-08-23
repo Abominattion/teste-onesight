@@ -1,0 +1,84 @@
+{% extends 'baseDash.html.twig' %}
+
+{% block title %}Dashboard!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="chart-content">
+        <article>
+            <h2>Stack dos canditados cadastrados</h2>
+            <canvas id="devChart" width="400" height="200"></canvas>
+        </article>
+
+        <article>
+            <h2>Lista de canditados cadastrados</h2>
+            <table id="devTable">
+                <thead>
+                    <tr>
+                        <th>Stack</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stack, devsList in devs %}
+                    {% for dev in devsList %}
+                    <tr>
+                        <td>{{ stack }}</td>
+                        <td>{{ dev.name }}</td>
+                        <td>{{ dev.email }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </article>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#devTable').DataTable();
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        var ctx = document.getElementById("devChart").getContext("2d");
+
+        var devCounts = {{ devCounts|json_encode|raw }};
+
+        var labels = Object.keys(devCounts);
+        var data = Object.values(devCounts);
+
+        var myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Número de Desenvolvedores",
+                    data: data,
+                    backgroundColor: [
+                        "rgba(75, 192, 192, 0.2)",
+                        "rgba(54, 162, 235, 0.2)",
+                        "rgba(255, 99, 132, 0.2)",
+                    ],
+                    borderColor: [
+                        "rgba(75, 192, 192, 1)",
+                        "rgba(54, 162, 235, 1)",
+                        "rgba(255, 99, 132, 1)",
+                    ],
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize: 1,
+                    },
+                },
+            },
+        });
+    });
+</script>
+{% endblock %}

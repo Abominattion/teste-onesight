@@ -52,13 +52,13 @@ class HomeController extends AbstractController
                 'tipo' => 'DevOps',
                 'titulo' => 'Engenheiro DevOps',
                 'descricao' => 'Gerenciamento de infraestrutura, integração contínua e implantação automatizada.',
-                'capa' => 'https://source.unsplash.com/1000x1000/?DevOps,infra,aws'
+                'capa' => 'https://source.unsplash.com/1000x1000/?IT,infra,aws'
             ],
             [
                 'tipo' => 'Mobile',
                 'titulo' => 'Desenvolvedor iOS/Android',
                 'descricao' => 'Criação de aplicativos móveis elegantes e funcionais para plataformas iOS e Android.',
-                'capa' => 'https://source.unsplash.com/1000x1000/?Mobile,flutter,android,ios'
+                'capa' => 'https://source.unsplash.com/1000x1000/?flutter,android'
             ]
         ];
         

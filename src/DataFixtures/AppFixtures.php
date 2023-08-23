@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
 
     private function createStacks(ObjectManager $manager): void
     {
-        $stackNames = ['Front-end', 'Back-end', 'Full-stack'];
+        $stackNames = ['Front-end', 'Back-end', 'Full-Stack', 'DevOps', 'Data Science', 'QA', 'Estágiario'];
 
         foreach ($stackNames as $stackName) {
             $stack = new Stack();
@@ -40,7 +40,7 @@ class AppFixtures extends Fixture
         $user->setEmail('admin@admin.com');
         $user->setPassword(password_hash('password', PASSWORD_DEFAULT));
         $user->setLevel(1);
-        $user->setStack($faker->numberBetween(1, 3));
+        $user->setStack($faker->numberBetween(1, 7));
 
         $manager->persist($user);
         $manager->flush();
@@ -48,13 +48,13 @@ class AppFixtures extends Fixture
 
     private function createUsers($faker, ObjectManager $manager): void
     {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 1000; $i++) {
             $user = new User();
             $user->setName($faker->name);
             $user->setEmail($faker->email);
             $user->setPassword(password_hash('password', PASSWORD_DEFAULT));
             $user->setLevel(0);
-            $user->setStack($faker->numberBetween(1, 3));
+            $user->setStack($faker->numberBetween(1, 7));
 
             $manager->persist($user);
         }
