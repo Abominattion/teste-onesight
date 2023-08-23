@@ -28,7 +28,7 @@ class HomeController extends AbstractController
                 'tipo' => 'Backend',
                 'titulo' => 'Desenvolvedor PHP',
                 'descricao' => 'Desenvolvimento de aplicações web utilizando PHP e frameworks relacionados.',
-                'capa' => 'https://source.unsplash.com/1000x1000/?Backend,php,ýthon'
+                'capa' => 'https://source.unsplash.com/1000x1000/?Backend,php,python'
             ],
             [
                 'tipo' => 'Frontend',
