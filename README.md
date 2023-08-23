@@ -1,30 +1,26 @@
 ## Sobre o projeto
 
-Rode os seguintes comandos
+Este projeto visa demonstrar uma aplicação Symfony utilizando Docker para ambiente de desenvolvimento. O projeto inclui configurações para ambiente, dependências, banco de dados e outros componentes.
 
+### Instruções de Uso
 
-Criar o container
-```shell
-docker-compose up -d  
-```
+1. **Criar o container**:
+    Execute o seguinte comando para iniciar o ambiente Docker:
+    ```shell
+    docker-compose up -d  
+    ```
+    Isso criará e iniciará os contêineres necessários para a aplicação.
 
-Instalar as depedências
-```shell
-composer install
-```
+2. **Instalar as dependências**:
+    Execute o comando a seguir para instalar as dependências do projeto:
+    ```shell
+    composer install
+    ```
+    Isso garantirá que todas as bibliotecas e pacotes necessários sejam instalados.
 
-Criar o banco de dados
-```shell
-php bin/console doctrine:database:create
-```
-
-Rodas as migrations
-```shell
-bin/console doctrine:migrations:migrate  
-php bin/console doctrine:fixtures:load  
-```
-
-Popular o banco com as fixtures
-```shell
-php bin/console doctrine:fixtures:load  
-```
+3. **Configurar o banco de dados**:
+    Crie o banco de dados, execute as migrações e popule o banco com dados de exemplo. Use o seguinte comando:
+    ```shell
+    php bin/console doctrine:database:create && bin/console doctrine:migrations:migrate && php bin/console doctrine:fixtures:load  
+    ```
+    Isso criará o banco de dados, aplicará as migrações e preencherá o banco com dados iniciais.
