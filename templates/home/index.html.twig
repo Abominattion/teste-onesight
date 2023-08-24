@@ -5,4 +5,25 @@
 {{ include('components/about.html.twig') }}
 {{ include('components/articles.html.twig') }}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/intro.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("introjs_seen")) {
+            introJs().setOptions({
+                steps: [{
+                        intro: "Bem-vindo! Este é um simulador de um site de oportunidades na área de programação. Ao navegar pela tela inicial, você encontrará algumas vagas, por enquanto estáticas.",
+                        element: document.querySelector("#header")
+                    },
+                    {
+                        intro: "No entanto, ao fazer login, uma experiência incrível o aguarda na dashboard, onde informações dinâmicas e empolgantes estarão à sua disposição!",
+                        element: document.querySelector("#header")
+                    },
+                ]
+            }).onexit(function () {
+                // Marque que o usuário viu o tutorial
+                localStorage.setItem("introjs_seen", true);
+            }).start();
+        }
+    });
+</script>
 {% endblock %}
